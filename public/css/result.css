@@ -1,0 +1,88 @@
+html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      border: 0;
+      font-family: 'Roboto', sans-serif;
+      /* No floating content on sides */
+}
+
+#search-bar{
+	display: flex;
+	width: 100%;
+	background-color: silver;
+	justify-content: center;
+	text-align: center;
+	border-bottom: 3px solid black;
+}
+
+#searchForm{
+	padding: 20px;
+	padding-bottom: 10px;
+	width: 100%;
+}
+
+#content-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#title-holder {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+h1{
+	width: 100%;
+	margin: 0px;
+	size: 2em;
+}
+
+li{
+	font-size: 1em;
+	padding-bottom: 20px;
+}
+
+p{
+	padding: 10px;
+}
+
+#nav-bar-wrapper {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	border-bottom: solid black 10px;
+}
+.nav-bar{
+	display: flex;
+	width: 100%;
+	justify-content: left;
+	align-items: center;
+	background-color: silver;
+	padding-left: 5px;
+}
+.fa-bars, .fa-times{
+	font-size: 2em;
+}
+
+.anchor{
+	font-size: 1.5em;
+	text-decoration: none;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: black;
+}
+
+.anchor:hover{
+	color: red;
+}
