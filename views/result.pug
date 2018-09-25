@@ -2,9 +2,10 @@ html(lang="en")
 head
 link(rel='stylesheet', href='/css/result.css')
 link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
-link(href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css')
+link(href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet")
 link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous")
 script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js")
+script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
 script(type="text/javascript", src="/js/result.js")
 body
 div(id="nav-bar-wrapper")
@@ -13,16 +14,21 @@ div(id="nav-bar-wrapper")
 		i(class="fas fa-times" style="display:none")
 		a(style="display:none" class="anchor" href="/") Home
 		a(style="display:none" class="anchor" href="/search/" + keyword + "/json") JSON
+div(id="container")
 	form(id="searchForm", action="/search" method="POST")
-			input(type="text" name="keyword")
-			input(value='Submit', type='submit')
+			label
+			input(placeholder="Search Here" id="text" type="text" name="keyword")
+			label
+			input(style="font-size: 15px" id="submit" value='Submit', type='submit')
 div(id="content_container")
-	div(id="title-holder")
-		h1= keyword
-		h2= tense
-	ol
-		each word in words
-			li= word.definition
+	div
+		span(class="underline")
+				h1= keyword
+	h2= tense
+div(id="title-holder")
+		ol
+			each word in words
+				li= word.definition
 
 
 

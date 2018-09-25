@@ -6,12 +6,84 @@ body {
 	height: 100%;
 	flex-direction: column;
 	overflow-y: hidden;
-	font-family: 'Roboto', sans-serif;
-	background-color: red;
+	font-family: 'Old Standard TT', serif;
+	background-color: #2c3e50;
+}
+
+.highlight{
+	color: #21c2f8;
+	font-weight: bolder;
+	font-size: 1.5em;
+	border-bottom: solid #21c2f8 5px;
 }
 
 
 h1 {
 	margin: 0;
 	padding: 0;
+}
+
+
+#container{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+
+input {
+  padding: 10px;
+  background-color: #202020;
+  border: solid 4px #bdc3c7;
+  border-radius: 5%;
+  color: #bdc3c7;
+  font-family: 'Old Standard TT', serif;
+}
+
+input:focus {
+	outline: none; 
+}
+
+input:hover{
+	outline: none; 
+	border: solid 4px #21c2f8;
+	-webkit-transition:.4s;
+	font-family: 'Old Standard TT', serif;
+}
+#searchForm{
+	width: 100%;
+}
+
+#text{
+	width: 40%;
+}
+
+
+#submit:hover{
+	border: solid 4px #21c2f8;
+	color: #21c2f8;
+	-webkit-transition:.4s;
+	font-family: 'Old Standard TT', serif;
+}
+
+#submit{
+	width: 10%;
+	-webkit-transition:.4s;
+	font-family: 'Old Standard TT', serif;
+}
+
+label {
+    display: block;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   font-family: 'Old Standard TT', serif;
 }

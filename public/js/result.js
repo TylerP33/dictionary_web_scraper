@@ -8,6 +8,6 @@ $(".nav-bar").click(function(e) {
 	}
 });
 
-
+$("ol").show("slide", { direction: "left" }, 1000);
 
 });

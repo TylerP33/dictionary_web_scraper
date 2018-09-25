@@ -1,8 +1,10 @@
-const express = require('express')
-const app = express();
 const path = require('path')
 const scraper = require('./scraper.js')
 const bodyParser = require('body-parser')
+const express = require('express')
+const app = express();
+const { check, validationResult } = require('express-validator/check');
+
 
 
 app.set("view engine", "pug");
@@ -11,15 +13,26 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+
 app.get('/', (req, res) => {
 	res.render("index");
 })
 
-app.post('/search', (req, res) => {
+app.post('/search', [
+	check('keyword', "Search bar cannot be empty. Please press 'back' and enter a word").not().isEmpty(),
+], (req, res) => {
+	  const errors = validationResult(req);
+  		if (!errors.isEmpty()) {
+    		return res.status(422).json({ errors: errors.array() });
+  		}
 	var keyword = req.body.keyword
 	res.redirect('/search/' + keyword);
 })
 
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+  	
+});
 
 // json is finished
 app.get('/search/:keyword/json', (req, res) => {

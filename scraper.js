@@ -15,7 +15,7 @@ function searchDictionary(searchTerm){
 			const word = {
 				keyword: searchTerm,
 				definition: $definition.text(),
-				tense: $('.luna-inflected-form').text()
+				tense: $('.luna-inflected-form').text(),
 			}
 			words.push(word);
 		});
