@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 	res.render("index");
 })
 
+
 app.post('/search', [
 	check('keyword', "Search bar cannot be empty. Please press 'back' and enter a word").not().isEmpty(),
 ], (req, res) => {
@@ -29,10 +30,7 @@ app.post('/search', [
 	res.redirect('/search/' + keyword);
 })
 
-process.on('unhandledRejection', (reason, p) => {
-  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
-  	
-});
+
 
 // json is finished
 app.get('/search/:keyword/json', (req, res) => {
@@ -43,18 +41,24 @@ app.get('/search/:keyword/json', (req, res) => {
 	});
 })
 
+
+
 // regular view
 
 app.get('/search/:keyword', (req, res) => {
 		scraper
 		.searchDictionary(req.params.keyword)
 		.then(words => {
+		if (words.length === 0){
+			res.render('error')
+		} else {
 		res.render('result', {
 			"words": words,
 			"keyword": words[Object.keys(words)[0]].keyword,
 			"tense": words[Object.keys(words)[0]].tense.replace(/,/g, ', '),
 			"speechParts": words[Object.keys(words)[0]].speechParts
-		});
+			});
+		}
 	});
 })
 

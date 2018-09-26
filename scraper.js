@@ -11,17 +11,17 @@ function searchDictionary(searchTerm){
 		const $ = cheerio.load(body);
 		$('ol').each(function(i, element){
 			const $element = $(element)
-			const $definition = $(element).find('li')
+			const $definition = $(element).find('li')		
 			const word = {
 				keyword: searchTerm,
 				definition: $definition.text(),
 				tense: $('.luna-inflected-form').text(),
 			}
 			words.push(word);
-		});
+		})
 		words.splice(-1);
 		return words
-	});
+	})
 }
 
 
