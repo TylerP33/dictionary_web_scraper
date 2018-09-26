@@ -9,7 +9,12 @@ script(type="text/javascript", src="/js/index.js")
 body
 div(id="container")
 	i(class="fas fa-exclamation-circle")
-	h1 Oops, we don't have that word or phrase!
+	h1 Sorry, there was an <span class="highlight">error</span>!
+div(id="error_holder")
+			h2 Please do not submit an empty search bar.
+			h2 Also, always check your spelling.
+			h2 Ommittance of phrases is common.
+span(id="pseudo")
 div(id="home_button")
 	a(href="/")
 		h2 Search
