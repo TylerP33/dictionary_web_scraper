@@ -79,11 +79,9 @@ h1{
 }
 
 #home_button h2:hover {
-	border: solid 4px #21c2f8;
 	background-color: #202020;
 	color: #21c2f8;
 	-webkit-transition:.4s;
-	border-radius: 25%;
 }
 
 a{
